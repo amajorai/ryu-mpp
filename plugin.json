@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ryu.mpp",
+  "version": "0.1.14",
+  "description": "Discover services that speak the Machine Payments Protocol, review exact Tempo testnet charges, enforce per-request and daily budgets, make explicitly approved paid requests, and keep a local receipt ledger. Signing keys use Ryu's per-app encrypted custody and never enter chat, app state, logs, or receipt records.",
+  "author": {
+    "name": "Ryu",
+    "url": "https://ryuhq.com"
+  },
+  "homepage": "https://mpp.dev",
+  "repository": "https://github.com/amajorai/ryu-mpp",
+  "keywords": ["payments", "mpp", "tempo", "services", "receipts"],
+  "extensions": {
+    "com.ryuhq.ryu": {
+      "id": "@ryu/mpp",
+      "displayName": "Payments"
+    }
+  }
+}
