@@ -1,0 +1,35 @@
+{
+  "name": "@ryu/mpp-app",
+  "private": true,
+  "version": "0.1.14",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "check-types": "tsc --noEmit",
+    "dev": "vite",
+    "test": "bun test src",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@ryu/app-host": "workspace:*",
+    "@ryu/blocks": "workspace:*",
+    "@ryu/ui": "workspace:*",
+    "@toolwind/corner-shape": "0.0.8-3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^21.0.4",
+    "@playwright/test": "^1.58.2",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/bun": "catalog:",
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^7.3.1",
+    "vite-plugin-singlefile": "^2.3.0"
+  }
+}
