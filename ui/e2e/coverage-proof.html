@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Payments policy proof</title>
+		<script>
+		"use strict";
+		window.ryu = {
+			context: { tab: "policy" },
+			app: {
+				async request({ method, path }) {
+					if (method === "GET" && path === "/status") {
+						return {
+							budget: {
+								availableAtomic: "2500000",
+								dailyCapAtomic: "5000000",
+								pendingAtomic: "0",
+								spentAtomic: "125000",
+							},
+							policy: {
+								allowedOrigins: ["https://mpp.dev"],
+								approvalThresholdAtomic: "500000",
+								autoPay: false,
+								dailySpendCapAtomic: "5000000",
+								enabledMethods: ["tempo"],
+								maxPerRequestAtomic: "1000000",
+								testnetOnly: true,
+								version: 1,
+							},
+							wallet: {
+								address: "0x86f28a7c9c1b6d0546f2a901",
+								balanceAtomic: "2500000",
+								configured: true,
+								currency: "pathUSD",
+								decimals: 6,
+								network: "Tempo testnet",
+							},
+						};
+					}
+					if (method === "GET" && path === "/services") {
+						return { services: [] };
+					}
+					if (method === "GET" && path === "/receipts") {
+						return { receipts: [] };
+					}
+					if (method === "PUT" && path === "/policy") {
+						return { policy: {} };
+					}
+					throw new Error(`Unmocked proof request: ${method} ${path}`);
+				},
+			},
+		};
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
+</html>
