@@ -1,0 +1,8 @@
+{
+  "name": "ryu-mpp-satellite",
+  "private": true,
+  "workspaces": [
+    "sidecar",
+    "packages/*"
+  ]
+}
